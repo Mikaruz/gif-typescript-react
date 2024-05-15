@@ -21,12 +21,17 @@ export const GifInput = ({ onNewCategory }: GifInputProps) => {
 
   return (
     <form onSubmit={(event) => onSubmit(event)}>
-      <input
-        type="text"
-        placeholder="Buscar gifs"
-        value={inputValue}
-        onChange={onInputChange}
-      ></input>
+      <div className="search-container">
+        <input
+          type="text"
+          placeholder="Search Gifs"
+          value={inputValue}
+          onChange={onInputChange}
+        ></input>
+        <button>
+          <span className="material-symbols-outlined">search</span>
+        </button>
+      </div>
     </form>
   );
 };

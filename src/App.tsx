@@ -3,7 +3,7 @@ import { GifInput } from "./components/GifInput";
 import { GifGrid } from "./components/GifGrid";
 
 function App() {
-  const [category, setCategory] = useState<string>("");
+  const [category, setCategory] = useState<string>("trending");
 
   const onAddCategory = (newCategory: string) => {
     setCategory(newCategory);
@@ -11,10 +11,9 @@ function App() {
 
   return (
     <>
-      <h1>GifExpertApp</h1>
+      <h1>GIFs</h1>
       <GifInput onNewCategory={onAddCategory} />
-
-      {category && <GifGrid category={category} />}
+      <GifGrid key={category} category={category} />
     </>
   );
 }
